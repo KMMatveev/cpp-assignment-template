@@ -2,3 +2,4 @@ build/*
 external/googletest/*
 .vscode/*
 Testing/*
+cw01_array_string/cw01.cpp
