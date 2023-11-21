@@ -28,7 +28,8 @@ public:
    void push_back(int value) {
        if(_size >= _capacity)
        {
-           std::shared_ptr<int[]> old = startptr;
+           std::shared_ptr<int[]> old = std::shared_ptr<int[]>(new int[_capacity]);
+           startptr.swap(old);
            size_t oldc = _capacity;
            _capacity *= 2;
            _size = 0;
@@ -57,7 +58,8 @@ public:
        }
    }
    void reserve(size_t newc) {
-       std::shared_ptr<int[]> old = startptr;
+       std::shared_ptr<int[]> old = std::shared_ptr<int[]>(new int[_capacity]);
+       startptr.swap(old);
        size_t oldc = _capacity;
        _capacity = newc;
        _size = 0;
@@ -70,7 +72,8 @@ public:
        }
    }
    void shrink_to_fit() {
-       std::shared_ptr<int[]> old = startptr;
+       std::shared_ptr<int[]> old = std::shared_ptr<int[]>(new int[_capacity]);
+       startptr.swap(old);
        size_t oldc = _capacity;
        _capacity = _size;
        startptr.reset(new int[_capacity]);
