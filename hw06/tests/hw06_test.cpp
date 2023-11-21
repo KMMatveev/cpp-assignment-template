@@ -43,10 +43,12 @@ TEST(Hw06Tests, Test4) {
     //     ASSERT_EQ(1, (v).get_array()[i]);
     // }
        
-    MyIntVector* v= new MyIntVector(5, 1);
-    //(*v).reserve(10);
+    unique_ptr<MyIntVector> v(new MyIntVector());
+    (*v).push_back(1);
+    (*v).push_back(1);
+    (*v).reserve(10);
     ASSERT_EQ(2, (*v).size());
-    ASSERT_EQ(5, (*v).capacity());
+    ASSERT_EQ(10, (*v).capacity());
     for (int i = 0; i < 2; i++) {
         ASSERT_EQ(1, (*v).get_array()[i]);
     }
