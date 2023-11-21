@@ -62,6 +62,7 @@ public:
                 startptr[_size] = old[i];
                 _size++;
             }
+            old.~shared_ptr();
         }
         startptr[_size] = value;
         _size++;
@@ -116,7 +117,7 @@ public:
     }
     ~MyIntVector()
     {
-        startptr.~__shared_ptr();
+        startptr.~shared_ptr();
     }
 };
 
