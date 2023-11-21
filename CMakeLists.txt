@@ -28,4 +28,5 @@ add_subdirectory(hw01)
 add_subdirectory(hw02)
 add_subdirectory(hw03)
 add_subdirectory(hw05)
+add_subdirectory(hw06)
 # ...
