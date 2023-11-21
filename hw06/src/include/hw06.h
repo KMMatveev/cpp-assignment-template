@@ -114,6 +114,10 @@ public:
         }
         std::cout<<"\n";
     }
+    ~MyIntVector()
+    {
+        startptr.~__shared_ptr();
+    }
 };
 
 #endif 
