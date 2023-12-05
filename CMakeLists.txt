@@ -27,5 +27,6 @@ endif (BUILD_TESTS)
 add_subdirectory(hw01)
 add_subdirectory(hw02)
 add_subdirectory(hw03)
+add_subdirectory(hw06)
 add_subdirectory(hw04)
 # ...
